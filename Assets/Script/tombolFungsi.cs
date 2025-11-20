@@ -1,8 +1,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class tombolFungsi : MonoBehaviour
 {
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,12 +19,12 @@ public class tombolFungsi : MonoBehaviour
 
     public void aksiPlay()
     {
-        SceneManager.LoadScene("playScene");
+        SceneManager.LoadScene("playGame");
     }
 
     public void aksiCredit()
     {
-        SceneManager.LoadScene("creditScene");
+        SceneManager.LoadScene("credit");
     }
 
     public void aksiExit()
@@ -31,6 +33,6 @@ public class tombolFungsi : MonoBehaviour
     }
     public void aksiMenu()
     {
-        SceneManager.LoadScene("menuScene");
+        SceneManager.LoadScene("menu");
     }
 }

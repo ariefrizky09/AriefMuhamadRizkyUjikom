@@ -10,7 +10,7 @@ public class time : MonoBehaviour
     public float waktu = 10f;
     //public TMP_Text timerText;
     public bool isCounting = true;
-    public objKarakter objKarakter;
+    public Score score;
     public Image fillTime;
     private Coroutine timerCoroutine;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -44,9 +44,9 @@ public class time : MonoBehaviour
         {
             isCounting = false;
             //timerText.text = "Waktu : 0";
-            PlayerPrefs.SetInt("skor", objKarakter.skor);
+            PlayerPrefs.SetInt("skor", score.isiSkor);
             PlayerPrefs.Save();
-            objKarakter.simpanHightSkor();
+            //objKarakter.simpanHightSkor();
             SceneManager.LoadScene("gameOver");
         }
     }

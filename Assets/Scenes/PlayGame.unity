@@ -150,7 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waktu: 10
   isCounting: 1
-  objKarakter: {fileID: 841334574}
+  score: {fileID: 189822702}
   fillTime: {fileID: 1809893046}
 --- !u!4 &35645818
 Transform:
@@ -685,8 +685,6 @@ MonoBehaviour:
   mousePosition: {x: 0, y: 0}
   healthImage: {fileID: 1000287542}
   teksSkor: {fileID: 684622047}
-  KarakterTransform: {fileID: 841334571}
-  PosisiKlik: {x: 0, y: 0}
   spawnPeluru: {fileID: 615616963183286859, guid: 941d12afcfd601d4e9b2ada247c27504, type: 3}
 --- !u!1 &867615337
 GameObject:
