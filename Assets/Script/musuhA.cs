@@ -3,21 +3,21 @@ using UnityEngine;
 public class musuhA : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void OnCollisionEnter2D(Collision2D col)
+    void Start()
     {
-        //Tidak hancur bila menyentuh pemain
-        if (col.collider.CompareTag("karakter"))
-        {
-            
-        }
+        
+    }
 
-        //Tidak hancur bila menyentuh objek lain selain lantai
-        if (!col.collider.CompareTag("batas"))
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("batas"))
         {
-            col.gameObject.GetComponent<objKarakter>().KurangNyawa();
+            Destroy(gameObject);
         }
-
-        //HANCUR hanya ketika menyentuh lantai
-                Destroy(gameObject);
     }
 }

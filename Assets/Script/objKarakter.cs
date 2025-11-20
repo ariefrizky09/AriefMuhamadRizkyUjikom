@@ -2,22 +2,26 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Unity.Mathematics;
 
 public class objKarakter : MonoBehaviour
 {
-   public AudioSource soundJump;
-    public AudioSource soundSkor;
-    public AudioSource soundEnemy;
-    public AudioSource soundNyawa;
+//    public AudioSource soundJump;
+//     public AudioSource soundSkor;
+//     public AudioSource soundEnemy;
+//     public AudioSource soundNyawa;
     //public bool isGrounded;
     //public float jumpForce = 12.0f; //variabel untuk tinggi lompatan
     public float health = 10;
-    public int maxHealth;
+    //public int maxHealth;
     public int skor;
     public int hightscore;
     public Vector2 mousePosition;
     public Image healthImage;
     public TMP_Text teksSkor;
+    public Transform KarakterTransform;
+    public Vector2 PosisiKlik;
+    public GameObject spawnPeluru;
     //public TMP_Text teksHight;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -31,12 +35,15 @@ public class objKarakter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        Vector2 worldMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         health= Mathf.Clamp(health, 0, 10);
 
         if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("tembak");
             //jump();
+            Instantiate(spawnPeluru, new Vector3(worldMousePosition.x, -4.5f, 0), quaternion.identity);
         }
 
         move();        
@@ -90,14 +97,14 @@ public class objKarakter : MonoBehaviour
     {
         if (health > 1)
         {
-            soundEnemy.Play();
+           // soundEnemy.Play();
             health = health -1;
         healthImage.fillAmount = health/10;
         } else
         {
-            PlayerPrefs.SetInt("skor", skor);
-            PlayerPrefs.Save();
-            simpanHightSkor();
+            //PlayerPrefs.SetInt("skor", skor);
+            //PlayerPrefs.Save();
+            //simpanHightSkor();
             SceneManager.LoadScene("gameOver");
         }
         
@@ -123,7 +130,7 @@ public class objKarakter : MonoBehaviour
 
      public void TambahSkor()
     {
-        soundSkor.Play();
+       // soundSkor.Play();
         skor= skor +1;
         teksSkor.text = "Skor : " + skor.ToString();
     }
