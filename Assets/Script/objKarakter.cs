@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class obj : MonoBehaviour
+public class objKarakter : MonoBehaviour
 {
    public AudioSource soundJump;
     public AudioSource soundSkor;
