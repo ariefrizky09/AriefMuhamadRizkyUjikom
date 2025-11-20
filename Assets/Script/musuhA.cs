@@ -21,7 +21,7 @@ public class musuhA : MonoBehaviour
     {
         if (col.collider.CompareTag("batas"))
         {
-            soundMusuh.Play();
+            //soundMusuh.Play();
             health.KurangNyawa();
             health.updateNyawa();
             Destroy(gameObject);
@@ -29,7 +29,7 @@ public class musuhA : MonoBehaviour
 
         if (col.collider.CompareTag("peluru"))
         {
-            soundPeluru.Play();
+            //soundPeluru.Play();
             Destroy(gameObject);
         }
     }
