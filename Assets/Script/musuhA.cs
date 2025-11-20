@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class musuhA : MonoBehaviour
 {
+    public AudioSource soundMusuh;
+    public AudioSource soundPeluru;
     public nyawa health;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,6 +21,7 @@ public class musuhA : MonoBehaviour
     {
         if (col.collider.CompareTag("batas"))
         {
+            soundMusuh.Play();
             health.KurangNyawa();
             health.updateNyawa();
             Destroy(gameObject);
@@ -26,6 +29,7 @@ public class musuhA : MonoBehaviour
 
         if (col.collider.CompareTag("peluru"))
         {
+            soundPeluru.Play();
             Destroy(gameObject);
         }
     }
